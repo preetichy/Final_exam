@@ -7,7 +7,7 @@
 body {
   background: #ffffff;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .intro {
@@ -27,16 +27,15 @@ p {
 
 #first {
   margin-top: 10px;
-  color: #FFCD5D;
+  color: #ffcd5d;
 }
 
 #second {
-  color: #51DF70;
-
+  color: #51df70;
 }
 
 #third {
-  color: #025F70;
+  color: #025f70;
   margin-bottom: 30px;
 }
 
@@ -61,17 +60,15 @@ p {
 }
 
 #enter:hover {
-  background-color: #02798F;
-  color: #FFCD5D;
+  background-color: #02798f;
+  color: #ffcd5d;
 }
 
 ul {
   text-align: left;
   margin-top: 20px;
   display: inline-block;
-
 }
-
 
 li {
   list-style: none;
@@ -89,6 +86,7 @@ li {
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5 ease;
+  position: relative; /* Ensure the delete button is positioned relative to the list item */
 }
 
 li:hover {
@@ -96,13 +94,21 @@ li:hover {
   color: #000;
 }
 
-li>button {
+li > button {
   font-weight: normal;
   background: none;
   border: none;
-  float: right;
-  color: #025f70;
-  font-weight: 800;
+  position: absolute; /* Position it relative to the li */
+  right: 10px; /* Adjust as needed */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  color: #ff0000; /* Red color for delete button */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+li > button.delete:hover {
+  color: #ff5555; /* Light red color on hover */
 }
 
 input {
@@ -112,12 +118,7 @@ input {
   border: none;
 }
 
-
 .done {
-  background: #51DF70 !important;
-  color: #00891E;
-}
-
-.delete {
-  display: none;
+  background: #51df70 !important;
+  color: #00891e;
 }
